@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Macbook</title>
+    <!---Bootstrap CDN-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    <!--Custom CSS-->
+    <link rel="stylesheet" href="styles/styles.css">
+</head>
+
+<!---------------Body Part------------->
+
+<body>
+    <header></header>
+    <!--Main area started-->
+    <main>
+        <!--Product area started-->
+        <section class="container product-section p-2">
+            <div class="row">
+                <!--Main image-->
+                <div class="col-lg-6 col-sm-12">
+                    <img src="images/mac.png" alt="" class="img-fluid">
+                </div>
+                <!--Heading of product-->
+                <div class="col-lg-6 col-sm-12">
+                    <div class="name-area">
+                        <h1>
+                            Customize your Blue 24inch iMac with Apple M1 chip.
+                        </h1>
+                        <p>
+                            Apple M1 chip with 8‑core CPU, 7‑core GPU, and 16‑core Neural Engine 8GB unified memory
+                            256GB SSD storage Retina display with True Tone Magic Keyboard Touch ID Force Touch trackpad
+                            Two Thunderbolt / USB 4 ports
+                        </p>
+                    </div>
+                    <!---------------Extra memory section------------->
+                    <div class="memory-area variation">
+                        <h5>Memory</h5>
+                        <div class="row memory-variations">
+                            <div class="d-flex justify-content-start">
+                                <button onclick="memoryCost(0,true)" id="memory-8 btn btn-lg">8GB unified
+                                    Memory</button>
+                                <button onclick="memoryCost(180,false)" class="ms-2" id="memory-16 btn btn-lg">16GB
+                                    unified
+                                    Memory</button>
+                            </div>
+                        </div>
+                    </div>
+                    <!---------------Extra Storage section------------->
+                    <div class="storage-area variation">
+                        <h5>Storage</h5>
+                        <div class="row storage-variations">
+                            <div class="d-flex justify-content-start">
+                                <button onclick="storageCost(0,true)" id="storage-256">256GB SSD Storage</button>
+                                <button onclick="storageCost(100,false)" class="ms-2" id="storage-512">512GB SSD
+                                    Storage</button>
+                                <button onclick="storageCost(180,false)" class="ms-2" id="storage-1tb">1TB SSD
+                                    Storage</button>
+                            </div>
+
+                        </div>
+                    </div>
+                    <!---------------Delivery method selection part------------->
+                    <div class="shipping-area variation">
+                        <h5>Choose your delivey opiton</h5>
+                        <div class="row shipping-variations">
+                            <div class="d-flex justify-content-start">
+                                <button onclick="deliveryCost(0,true)" id="shipping-free">Friday, August 25 FREE Prime
+                                    Delivery</button>
+                                <button onclick="deliveryCost(20,false)" class="ms-2" id="shipping-express">Saturday,
+                                    August 21 Delivery Charge
+                                    $20</button>
+                            </div>
+                        </div>
+                    </div>
+                    <!---------------Price calculation part------------->
+                    <div class="price-area ">
+                        <div class="row">
+                            <div class="col-lg-6 col-sm-12">
+                                <!---------------Best price part------------->
+                                <div class="d-flex justify-content-between sub-section">
+                                    <h5 class="price-title">Best Price</h5>
+                                    <h5 class="price">$<span id="best-price">1299</span></h5>
+                                </div>
+                                <!---------------Memory price part------------->
+                                <div class="d-flex justify-content-between sub-section">
+                                    <h5 class="price-title">Extra Memory Cost</h5>
+                                    <h5 class="price">$<span id="memory-cost">0</span></h5>
+                                </div>
+                                <!---------------Storage price part------------->
+                                <div class="d-flex justify-content-between sub-section">
+                                    <h5 class="price-title">Extra Storage Cost</h5>
+                                    <h5 class="price">$<span id="storage-cost">0</span></h5>
+                                </div>
+                                <!---------------Delivery Cost part------------->
+                                <div class="d-flex justify-content-between delivery_price">
+                                    <h5 class="price-title">Delivery Charge</h5>
+                                    <h5 class="price">$<span id="delivery-cost">0</span></h5>
+                                </div>
+                                <!---------------Total cost part------------->
+                                <div class="d-flex justify-content-between total_price">
+                                    <h5 class="price-title">Total Price</h5>
+                                    <h5 class="price">$<span id="total-cost">1299</span></h5>
+                                </div>
+                                <br>
+                                <!---------------Promo code area------------->
+                                <div class="coupon-area">
+                                    <div class="row">
+                                        <p>Add Promo Code</p>
+                                        <div class="d-flex">
+                                            <input type="text" name="" id="coupon" placeholder="Enter Coupon Code">
+                                            <button onclick="calculatePromo(20)" class="apply-btn"
+                                                id="coupon-apply">Apply</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-6"></div>
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <hr>
+        <!---------------Final Total price part------------->
+        <div class="total-price">
+            <h2 class="text-center">Total: $<span id="final-total-cost">1299</span></h2>
+        </div>
+    </main>
+
+    <footer></footer>
+
+    <!---Include js file---->
+    <script src="js/script.js"></script>
+</body>
+
+</html>

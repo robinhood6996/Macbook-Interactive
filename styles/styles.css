@@ -1,0 +1,50 @@
+body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/*=============Global Styles=============*/
+button {
+    padding: 8px;
+    background: white;
+    border: 1px solid #878787dd;
+    border-radius: 5px;
+}
+button:hover{
+    background:black;
+    color:white;
+    transition: 0.5s;
+}
+/*=========product variation part============*/
+.variation{
+    margin-bottom: 20px;
+}
+/*===========Price details division==========*/
+.d-flex.justify-content-between.sub-section{
+    padding: 8px;
+    border-bottom: 1px solid #dddd;
+}
+.delivery_price{
+     padding: 8px;
+}
+/*==============Total price division===================*/
+.d-flex.justify-content-between.total_price {
+    margin-top: 10px;
+    padding: 10px 0px 0px;
+    border-top: 2px solid black;
+}
+
+/**===============Coupon input and button============*/
+input#coupon {
+    padding: 10px;
+    border-radius: 5px;
+}
+
+button#coupon-apply {
+    padding: 10px 20px;
+    margin-left: 5px;
+    background: #0062b0;
+    color: white;
+    font-weight: bold;
+    border:none;
+}
