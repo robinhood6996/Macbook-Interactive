@@ -10,7 +10,7 @@ function memoryCost(price, builtIn) {
     }
 
     //call a function to calculate total price in this event
-    calculateTotal();
+    calculateSubTotal();
 }
 
 //Storage cost calculation
@@ -25,7 +25,7 @@ function storageCost(price, builtIn) {
     }
 
     //call a function to calculate total price in this event
-    calculateTotal();
+    calculateSubTotal();
 }
 
 //Delivey cost calculation
@@ -40,17 +40,17 @@ function deliveryCost(price, builtIn) {
     }
 
     //call a function to calculate total price in this event
-    calculateTotal();
+    calculateSubTotal();
 }
 
 //calculate total price by getting extra added prices=========
-function calculateTotal() {
+function calculateSubTotal() {
     const bestPrice = document.getElementById('best-price');
     const memoryPrice = document.getElementById('memory-cost');
     const storagePrice = document.getElementById('storage-cost');
     const deliveryCost = document.getElementById('delivery-cost');
-    const totalPrice = document.getElementById('total-cost');
-    const finalTotalPrice = document.getElementById('final-total-cost');
+    const totalPrice = document.getElementById('sub-total-cost');
+    const finalTotalPrice = document.getElementById('total-cost');
 
     //Calculate the total price by sum of all changes price===
     totalPrice.innerText = parseInt(bestPrice.innerText) + parseInt(memoryPrice.innerText) + parseInt(storagePrice.innerText) + parseInt(deliveryCost.innerText);
@@ -63,13 +63,16 @@ function calculateTotal() {
 //Calculat promo code and reduce the total ammount of purchase===
 function calculatePromo(percent) {
     const promocode = document.getElementById('coupon');
-    const finalTotalPrice = document.getElementById('final-total-cost');
+    const subTotal = document.getElementById('sub-total-cost');
+    const finalTotalPrice = document.getElementById('total-cost');
     const code = 'stevekaku'; //define the promocode
 
     //checking the coupon code with case insensitive===
     if (promocode.value.toLowerCase() == code.toLowerCase()) {
-        const promo = (percent / 100) * finalTotalPrice.innerText;
-        finalTotalPrice.innerText = finalTotalPrice.innerText - promo;
+        const promo = (percent / 100) * subTotal.innerText;
+        finalTotalPrice.innerText = subTotal.innerText - promo;
         promocode.value = '';
+    } else {
+        alert('Promo Code Is Wrong!')
     }
 }
